@@ -2,30 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="672063ce-1083-45fb-97e1-de0ca7fd3f2a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vagrant.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/Components/Form/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/Components/News/News.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/Components/News/News.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/webpack.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/models/userModel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/schemas/userSchema.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.eslintrc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Form/Form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Input.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Input/Input.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/News.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.eslintrc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/mongoose/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/mongoose/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
