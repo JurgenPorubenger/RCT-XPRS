@@ -4,8 +4,20 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const path = require('path');
 const dotenv = require('dotenv').config();
+const mongoose = require('mongoose');
 
 const app = express();
+
+mongoose.connect(process.env.DB_CONNECT, {
+  useNewUrlParser: true ,
+  useUnifiedTopology: true
+}, ()=>console.log('Connected to DB'));
+
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log("Open connection!")
+});
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -15,7 +27,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 
-app.use('/', indexRouter);
+app.use('/api', indexRouter);
 app.use('/users', usersRouter);
 
 app.use((req, res, next) => {

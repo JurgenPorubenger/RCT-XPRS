@@ -1,25 +1,17 @@
-import React from 'react';
-import './App.css';
-import News from './Components/News';
+import React from 'react'
+import './App.css'
+// import News from './Components/News/News'
 // import Input from './Components/Input';
-// eslint-disable-next-line import/no-named-as-default
-import Form from './Components/Form';
+import Form from './Components/Form/Form'
 
-
-function App() {
+function App () {
   return (
     <div className="App">
-      <header className="App-header">
-        Всем привет!.
-        <News data="ffff" />
-        {' '}
-        {/* добавили свойство data */}
-      </header>
-      <div>
-        <Form />
-      </div>
+      <header className="App-header" />
+      {/*  <News data="ffff" /> */}
+      <Form />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

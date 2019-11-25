@@ -1,25 +1,18 @@
 import React from 'react';
-import { Form, Icon, Input, Button } from 'antd';
+import 'antd/dist/antd.css';
+import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import s from './index.css'
 
-
-function hasErrors(fieldsError) {
-    return Object.keys(fieldsError).some(field => fieldsError[field]);
-}
-
- class HorizontalLoginForm extends React.Component {
-    componentDidMount() {
-        // To disabled submit button at the beginning.
-        this.props.form.validateFields();
-    }
-
+class NormalLoginForm extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
             if (!err) {
-                const proxyurl = "https://cors-anywhere.herokuapp.com/";
-                const url = "/8080/users";
                 console.log('Received values of form: ', values);
-                fetch(proxyurl+url, {
+            }
+            const url = "/api/registrate";
+            console.log('Go to backend: ', values);
+            fetch(url, {
                     method: 'POST',
                     headers: {
                         'Accept': 'application/json',
@@ -31,19 +24,14 @@ function hasErrors(fieldsError) {
                     .then(response => response.json())
                     .then(data => console.log(data))
                     .catch(error => console.log(error));
-            }
-        });
+            });
     };
 
     render() {
-        const { getFieldDecorator, getFieldsError, getFieldError, isFieldTouched } = this.props.form;
-
-        // Only show error after a field is touched.
-        const usernameError = isFieldTouched('username') && getFieldError('username');
-        const passwordError = isFieldTouched('password') && getFieldError('password');
+        const { getFieldDecorator } = this.props.form;
         return (
-            <Form layout="inline" onSubmit={this.handleSubmit}>
-                <Form.Item validateStatus={usernameError ? 'error' : ''} help={usernameError || ''}>
+            <Form onSubmit={this.handleSubmit} className="login-form">
+                <Form.Item>
                     {getFieldDecorator('username', {
                         rules: [{ required: true, message: 'Please input your username!' }],
                     })(
@@ -53,7 +41,17 @@ function hasErrors(fieldsError) {
                         />,
                     )}
                 </Form.Item>
-                <Form.Item validateStatus={passwordError ? 'error' : ''} help={passwordError || ''}>
+                <Form.Item>
+                    {getFieldDecorator('email', {
+                        rules: [{ required: true, message: 'Please input your email!' }],
+                    })(
+                        <Input
+                            prefix={<Icon type="mail" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                            placeholder="email"
+                        />,
+                    )}
+                </Form.Item>
+                <Form.Item>
                     {getFieldDecorator('password', {
                         rules: [{ required: true, message: 'Please input your Password!' }],
                     })(
@@ -65,13 +63,23 @@ function hasErrors(fieldsError) {
                     )}
                 </Form.Item>
                 <Form.Item>
-                    <Button type="primary" htmlType="submit" disabled={hasErrors(getFieldsError())}>
+                    {getFieldDecorator('remember', {
+                        valuePropName: 'checked',
+                        initialValue: true,
+                    })(<Checkbox>Remember me</Checkbox>)}
+                    <a className="login-form-forgot" href="">
+                        Forgot password
+                    </a>
+                    <Button type="primary" htmlType="submit" className="login-form-button">
                         Log in
                     </Button>
+                    Or <a href="">register now!</a>
                 </Form.Item>
             </Form>
         );
     }
 }
 
-export default Form.create({ name: 'horizontal_login' })(HorizontalLoginForm);
+export default Form.create({ name: 'normal_login' })(NormalLoginForm);
+
+
