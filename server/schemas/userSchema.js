@@ -1,7 +1,7 @@
 const registerValidation = {
     '$schema': 'http://json-schema.org/draft-07/schema#',
     'properties': {
-        'firstName': {
+        'username': {
             'type': 'string',
             'minLength': 2,
             'maxLength': 20,
@@ -11,7 +11,7 @@ const registerValidation = {
         },
         'password': {
             'type': ['string', 'number'],
-        },
+        }
     },
 };
 
