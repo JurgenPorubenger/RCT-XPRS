@@ -39,7 +39,7 @@ router.post('/registrate', async (req, res) => {
   if(!valid) return  res.status(400).send(errors);
 
   const emailExist = await UserModel.findOne({email});
-  if(emailExist) return res.status(400).send('Email already exist');
+  if(emailExist) return res.status(400).send(`${emailExist.username} already exist`);
 
   try {
     const savedUser = await user.save();

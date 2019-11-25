@@ -1,7 +1,7 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
-import s from './index.css'
+import './index.css'
 
 class NormalLoginForm extends React.Component {
     handleSubmit = e => {
@@ -63,7 +63,7 @@ class NormalLoginForm extends React.Component {
                     <Button type="primary" htmlType="submit" className="login-form-button">
                         Log in
                     </Button>
-                    Or <a href="../">register now!</a>
+                    Or <a href="/">register now!</a>
                 </Form.Item>
             </Form>
         );

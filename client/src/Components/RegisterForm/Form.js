@@ -1,9 +1,16 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
-import s from './index.css'
+import  './index.css'
+import { Link } from 'react-router-dom'
 
 class NormalLoginForm extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            hasError: false
+        }
+    }
     handleSubmit = e => {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
@@ -22,7 +29,13 @@ class NormalLoginForm extends React.Component {
                     body: JSON.stringify(values)
                 })
                     .then(response => response.json())
-                    .then(data => console.log(data))
+                    .then(data => {
+                        console.log('PPPPPP');
+                        if(!data.response.ok) {
+                            console.log(this.state)
+                            this.setState({hasError:true})
+                        }
+                    })
                     .catch(error => console.log(error));
             });
     };
@@ -30,7 +43,7 @@ class NormalLoginForm extends React.Component {
     render() {
         const { getFieldDecorator } = this.props.form;
         return (
-            <Form onSubmit={this.handleSubmit} className="login-form">
+            <Form onSubmit={this.handleSubmit} className="register-form">
                 <Form.Item>
                     {getFieldDecorator('username', {
                         rules: [{ required: true, message: 'Please input your username!' }],
@@ -67,13 +80,13 @@ class NormalLoginForm extends React.Component {
                         valuePropName: 'checked',
                         initialValue: true,
                     })(<Checkbox>Remember me</Checkbox>)}
-                    <a className="login-form-forgot" href="">
+                    <a className="register-form-forgot" href="">
                         Forgot password
                     </a>
-                    <Button type="primary" htmlType="submit" className="login-form-button">
-                        Log in
+                    <Button type="primary" htmlType="submit" className="register-form-button">
+                        Register
                     </Button>
-                    Or <a href="../">register now!</a>
+                    Or <a href="/login">login!</a>
                 </Form.Item>
             </Form>
         );
