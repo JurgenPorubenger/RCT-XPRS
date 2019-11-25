@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 
 const userSchema = new mongoose.Schema({
-    firstName: {
+    username: {
         type: String,
         required: true,
         min: 2,
@@ -38,3 +38,7 @@ userSchema.methods.setPassword = async function(password) {
         return e;
     }
 };
+
+
+const Model = mongoose.model('UserSchema', userSchema);
+module.exports = Model;

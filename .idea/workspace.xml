@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="672063ce-1083-45fb-97e1-de0ca7fd3f2a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
+=======
+    <list default="true" id="672063ce-1083-45fb-97e1-de0ca7fd3f2a" name="Default Changelist" comment="" />
+>>>>>>> Stashed changes
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,9 +35,14 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="true" />
     <property name="ignore_missing_gitignore" value="true" />
+<<<<<<< Updated upstream
     <property name="javascript.nodejs.core.library.configured.version" value="10.15.2" />
     <property name="last_opened_file_path" value="$USER_HOME$/STUDY/05.11HW" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+=======
+    <property name="javascript.nodejs.core.library.configured.version" value="10.16.3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server" />
+>>>>>>> Stashed changes
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -56,6 +65,11 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+<<<<<<< Updated upstream
+=======
+      <recent name="C:\Users\Arkh\Desktop\RCT-XPRS\server" />
+      <recent name="C:\Users\Arkh\Desktop\RCT-XPRS\client" />
+>>>>>>> Stashed changes
       <recent name="$PROJECT_DIR$" />
       <recent name="C:\Users\Arkh\Desktop\myreact\src\Components" />
       <recent name="C:\Users\Arkh\Desktop\myreact\server" />
@@ -129,6 +143,10 @@
       <workItem from="1571736131232" duration="474000" />
       <workItem from="1574342233543" duration="6505000" />
       <workItem from="1574375792804" duration="2992000" />
+<<<<<<< Updated upstream
+=======
+      <workItem from="1574431150077" duration="6343000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>

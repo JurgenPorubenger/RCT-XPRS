@@ -19,7 +19,7 @@ db.once('open', function() {
   console.log("Open connection!")
 });
 
-const indexRouter = require('./routes/index');
+const indexRouter = require('./routes/api/index');
 const usersRouter = require('./routes/users');
 
 app.use(express.json());

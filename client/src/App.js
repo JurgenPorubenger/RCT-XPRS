@@ -2,14 +2,16 @@ import React from 'react'
 import './App.css'
 // import News from './Components/News/News'
 // import Input from './Components/Input';
-import Form from './Components/Form/Form'
+import RegisterForm from './Components/RegisterForm/Form'
+import LoginForm from './Components/LoginForm/Form'
 
 function App () {
   return (
     <div className="App">
       <header className="App-header" />
       {/*  <News data="ffff" /> */}
-      <Form />
+      <RegisterForm />
+      <LoginForm />
     </div>
   )
 }
