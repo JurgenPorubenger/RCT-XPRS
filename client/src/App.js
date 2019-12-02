@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 // import Input from './Components/Input';
 import RegisterForm from './Components/RegisterForm/Form'
 import LoginForm from './Components/LoginForm/Form'
+import Chat from './Components/chatPage/Chat.js'
 
 function App () {
   return (
@@ -12,6 +13,7 @@ function App () {
       <Switch>
         <div className="App">
           <Route path="/" exact component={RegisterForm} />
+          <Route path="/chat" component={Chat} />
           <Route path="/login" component={LoginForm} />
           {/*  <News data="ffff" /> */}
         </div>

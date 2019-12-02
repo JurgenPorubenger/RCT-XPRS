@@ -2,7 +2,6 @@ import React from 'react';
 import 'antd/dist/antd.css';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import  './index.css'
-import { Link } from 'react-router-dom'
 
 class NormalLoginForm extends React.Component {
     constructor(props){
