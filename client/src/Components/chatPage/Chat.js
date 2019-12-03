@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { Component } from 'react';
 import './Chat.css'
-import { Row, Col, Input } from 'antd'
-import { Layout } from 'antd';
+import { Row, Col, Input, Layout } from 'antd'
 const { Header, Footer, Sider, Content } = Layout
+import queryString from 'query-string'
+import io from 'socket.io-client'
 
 export default class Chat extends React.Component {
   constructor (props) {
@@ -12,21 +13,19 @@ export default class Chat extends React.Component {
   render () {
     return (
       <div>
-        <Layout>
-          <Header>Header</Header>
-          <Content><Row>
-            <Col span={18} push={6}>
-              <Input placeholder="Basic usage" />;
-
-                      col-18 col-push-6
-            </Col>
-            <Col span={6} pull={18}>
-                      col-6 col-pull-18
-            </Col>
-          </Row></Content>
-          <Footer>Footer</Footer>
-        </Layout>
-
+        <Row type="flex">
+          <Col span={6} order={1}>
+          </Col>
+          <Col span={12} order={2}>
+            <Header className='header_style'>Header</Header>
+            <Content>
+              <Input className='input_style' placeholder="Enter message " />
+            </Content>
+            <Footer>Footer</Footer>
+          </Col>
+          <Col span={6} order={3}>
+          </Col>
+        </Row>
       </div>
     )
   }

@@ -1,12 +1,23 @@
 const createError = require('http-errors');
 const express = require('express');
+const http = require('http');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const path = require('path');
 const dotenv = require('dotenv').config();
 const mongoose = require('mongoose');
+const socketio = require('socket.io');
 
 const app = express();
+const server = http.createServer(app);
+const io = socketio(server);
+
+io.on('connection', (socket)=> {
+  console.log('we have connection');
+  socket.on('disconnect', ()=>{
+    console.log('user has left')
+  })
+})
 
 mongoose.connect(process.env.DB_CONNECT, {
   useNewUrlParser: true ,
@@ -45,4 +56,4 @@ app.use((err, req, res, next) => {
 });
 
 
-app.listen(process.env.PORT || 8080, () => { console.log('Server running on port 8080'); });
+server.listen(process.env.PORT || 8080, () => { console.log('Server running on port 8080'); });
