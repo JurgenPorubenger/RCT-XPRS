@@ -6,15 +6,17 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import RegisterForm from './Components/RegisterForm/Form'
 import LoginForm from './Components/LoginForm/Form'
 import Chat from './Components/chatPage/Chat.js'
+import Join from './Components/Join/Join'
 
 function App () {
   return (
     <Router>
       <Switch>
         <div className="App">
-          <Route path="/" exact component={RegisterForm} />
-          <Route path="/chat" component={Chat} />
-          <Route path="/login" component={LoginForm} />
+            <Route path="/" exact component={Join} />
+            <Route path="/register" component={RegisterForm} />
+            <Route path="/chat" component={Chat} />
+            <Route path="/login" component={LoginForm} />
           {/*  <News data="ffff" /> */}
         </div>
       </Switch>

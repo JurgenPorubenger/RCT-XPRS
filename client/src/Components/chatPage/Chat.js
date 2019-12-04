@@ -1,32 +1,31 @@
-import React, { Component } from 'react';
-import './Chat.css'
-import { Row, Col, Input, Layout } from 'antd'
-const { Header, Footer, Sider, Content } = Layout
-import queryString from 'query-string'
-import io from 'socket.io-client'
+import React, { Component, useState, useEffect } from 'react';
+import queryString from 'query-string';
+import io from "socket.io-client";
 
-export default class Chat extends React.Component {
-  constructor (props) {
-    super(props)
-  }
+// import TextContainer from '../TextContainer/TextContainer';
+// import Messages from '../Messages/Messages';
+// import InfoBar from '../InfoBar/InfoBar';
+// import Input from '../Input/Input';
 
-  render () {
-    return (
-      <div>
-        <Row type="flex">
-          <Col span={6} order={1}>
-          </Col>
-          <Col span={12} order={2}>
-            <Header className='header_style'>Header</Header>
-            <Content>
-              <Input className='input_style' placeholder="Enter message " />
-            </Content>
-            <Footer>Footer</Footer>
-          </Col>
-          <Col span={6} order={3}>
-          </Col>
-        </Row>
-      </div>
-    )
-  }
-}
+import './Chat.css';
+
+let socket;
+
+const Chat = ({ location }) => {
+  const [name, setName] = useState('');
+  const [room, setRoom] = useState('');
+  const ENDPOINT = 'localhost:8080';
+  useEffect(() => {
+    const {name, room} = queryString.parse(location.search);
+    socket=io(ENDPOINT);
+    setRoom(room);
+    setName(name);
+    socket.emit('join', {name, room},({err})=>console.log(err));
+    console.log(location)
+  }, [ENDPOINT,location.search]);
+  return (
+   <h1>Chat</h1>
+  );
+};
+
+export default Chat;
