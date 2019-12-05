@@ -1,31 +1,31 @@
-import React, { Component, useState, useEffect } from 'react';
-import queryString from 'query-string';
-import io from "socket.io-client";
+import React, { Component, useState, useEffect } from 'react'
+import queryString from 'query-string'
+import io from 'socket.io-client'
 
 // import TextContainer from '../TextContainer/TextContainer';
 // import Messages from '../Messages/Messages';
 // import InfoBar from '../InfoBar/InfoBar';
 // import Input from '../Input/Input';
 
-import './Chat.css';
+import './Chat.css'
 
-let socket;
+let socket
 
 const Chat = ({ location }) => {
-  const [name, setName] = useState('');
-  const [room, setRoom] = useState('');
-  const ENDPOINT = 'localhost:8080';
+  const [name, setName] = useState('')
+  const [room, setRoom] = useState('')
+  const ENDPOINT = 'localhost:8080'
   useEffect(() => {
-    const {name, room} = queryString.parse(location.search);
-    socket=io(ENDPOINT);
-    setRoom(room);
-    setName(name);
-    socket.emit('join', {name, room},({err})=>console.log(err));
-    console.log(location)
-  }, [ENDPOINT,location.search]);
+    const { name, room } = queryString.parse(location.search)
+    setRoom(room)
+    setName(name)
+    socket = io(ENDPOINT)
+    socket.emit('join', { name, room }, () => {});
+    return ()=> {socket.emit('disconnect'); }
+  }, [ENDPOINT, location.search])
   return (
-   <h1>Chat</h1>
-  );
-};
+    <h1>Chat</h1>
+  )
+}
 
-export default Chat;
+export default Chat

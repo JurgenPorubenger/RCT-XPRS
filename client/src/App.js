@@ -12,13 +12,10 @@ function App () {
   return (
     <Router>
       <Switch>
-        <div className="App">
-            <Route path="/" exact component={Join} />
-            <Route path="/register" component={RegisterForm} />
-            <Route path="/chat" component={Chat} />
-            <Route path="/login" component={LoginForm} />
-          {/*  <News data="ffff" /> */}
-        </div>
+        <Route path="/" exact component={Join} />
+        <Route path="/register" component={RegisterForm} />
+        <Route path="/chat" component={Chat} />
+        <Route path="/login" component={LoginForm} />
       </Switch>
     </Router>
   )
