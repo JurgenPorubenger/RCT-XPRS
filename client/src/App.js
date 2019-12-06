@@ -13,8 +13,8 @@ function App () {
     <Router>
       <Switch>
         <Route path="/" exact component={Join} />
-        <Route path="/register" component={RegisterForm} />
         <Route path="/chat" component={Chat} />
+        <Route path="/register" component={RegisterForm} />
         <Route path="/login" component={LoginForm} />
       </Switch>
     </Router>
