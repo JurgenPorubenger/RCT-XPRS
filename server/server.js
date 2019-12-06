@@ -4,7 +4,7 @@ const http = require('http');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const path = require('path');
-const dotenv = require('dotenv').config();
+require('dotenv').config();
 const mongoose = require('mongoose');
 const socketio = require('socket.io');
 
@@ -12,17 +12,24 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
+const {addUser,getUser,getUsersInRoom,removeUser}= require('./users');
+
 io.on('connection', (socket)=> {
   console.log('we have connection');
   socket.on('join', ({name, room}, callback) => {
-    console.log(name, room)
+    const{error, user} = addUser({id:socket.id, name, room});
+    if(error) return callback(error);
+    socket.join(user.room);
+    socket.emit('message', { user: 'admin', text: `${user.name}, welcome to room ${user.room}.`});
+    socket.broadcast.to(user.room).emit('message', { user: 'admin', text: `${user.name} has joined!` });
+    console.log(name, room);
     callback()
-  })
+  });
   socket.on('disconnect', ()=>{
     console.log('user has left')
 
   })
-})
+});
 
 mongoose.connect(process.env.DB_CONNECT, {
   useNewUrlParser: true ,
